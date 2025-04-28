@@ -20,7 +20,7 @@ This project demonstrates the implementation of a Library Management System usin
 ## Project Structure
 
 ### 1. Database Setup
-![ERD](https://github.com/CoDy23x/library_management_sql_project/blob/main/library_erd.png)
+![ERD](https://github.com/CoDy23x/library_management_sql_project/blob/main/EER_diagram.png)
 
 - **Database Creation**: Created a database named `library_db`.
 - **Table Creation**: Created tables for branches, employees, members, books, issued status, and return status. Each table includes relevant columns and relationships.
@@ -117,7 +117,7 @@ CREATE TABLE return_status
 - **Delete**: Removed records from the `members` table as needed.
 
 **Task 1. Create a New Book Record**
--- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
+-- ("978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B Lippincott & Co.')"
 
 ```sql
 INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
@@ -196,7 +196,7 @@ ON ist.issued_book_isbn = b.isbn
 GROUP BY 1;
 ```
 
-9. **List Members Who Registered in the Last 180 Days**:
+9. **List Members Who Registered in the Last 365 Days**:
 ```sql
 SELECT *
 FROM members
@@ -310,7 +310,7 @@ ORDER BY 1;
 ```
 
 **Task 16: CTAS: Create a Table of Active Members**  
-Use the CREATE TABLE AS (CTAS) statement to create a new table active_members containing members who have issued at least one book in the last 2 months.
+Use the CREATE TABLE AS (CTAS) statement to create a new table active_members containing members who have issued at least one book in the last 6 months.
 
 ```sql
 
@@ -457,7 +457,5 @@ This project demonstrates the application of SQL skills in creating and managing
 2. **Set Up the Database**: Execute the SQL scripts in the `database_setup.sql` file to create and populate the database.
 3. **Run the Queries**: Use the SQL queries in the `analysis_queries.sql` file to perform the analysis.
 4. **Explore and Modify**: Customize the queries as needed to explore different aspects of the data or answer additional questions.
-
-## Author - Zero Analyst
 
 Thank you for your interest in this project!
